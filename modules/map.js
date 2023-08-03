@@ -1,9 +1,13 @@
+let map;
 // funzione che viene chiamata come callback al caricamento dello script di Google Maps
-function initMap() {
+function initMap(lat, lng, zoom) {
     // Creiamo un mappa, passando le coordinate per centrarla
     map = new google.maps.Map(document.querySelector("#map"), {
-      center: myCoords,
-      zoom: 6,
+      center: {
+        lat,
+        lng
+      },
+      zoom, // anzichè zoom: zoom; 
     });
   
     // Creiamo una infowindow
@@ -32,7 +36,5 @@ function initMap() {
     });
   }
   
-  // chiama la funzione che crea la mappa quando viene caricato il documento
-  window.initMap = initMap;
   
 export {initMap}  
