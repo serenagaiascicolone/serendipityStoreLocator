@@ -13,27 +13,53 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div id="drawer">
-        <div>
-            <!-- pulsanti -->
-                     <button>Tutti</button>
-                    <button>Computer</button>
-                    <button>Tv</button>
-                    <button>Smartphone</button>
+    <header>
+        <h1>Serendipity store</h1>
+    </header>
 
-        </div>
-        <div>
-            <!-- input -->
-            <input type="search" name="" id="" placeholder="filtra per nome o per indirizzo">
-            <button>X</button>
-        </div>
-        <div id="stores-list">
-            <!-- stores -->
-        </div>
-    </div>
-    <!-- Contenitore della mappa -->
-    <div id="map"></div>
-  
+    <main>
+
+
+        <!-- Contenitore della mappa -->
+        <aside id="drawer">
+            <div class="category-buttons-container">
+                <!-- pulsanti -->
+                        <button data-filter="all">Tutti</button>
+                        <button data-filter="computer">Computer</button>
+                        <button data-filter="tv">Tv</button>
+                        <button data-filter="smartphone">Smartphone</button>
+            </div>
+                        <div class="search-container">
+                            <!-- input -->
+                            <input type="search" name="" id="search-input" placeholder="filtra per nome o per indirizzo">
+                            <button>X</button>
+                        </div>
+                        <div id="stores-list">
+                            <!-- stores -->
+                            <article>
+                                <h3>name</h3>
+                                <address> Via Paolo Orsi</address>
+                                <p>Email</p>
+                                <p>telephone</p>
+                                <button> Directionary</button>
+                            </article>
+                            <article>
+                                <h3>name</h3>
+                                <address> Via Paolo Orsi</address>
+                                <p>Email</p>
+                                <p>telephone</p>
+                                <button> Directionary</button>
+                            </article>
+                        </div>
+                   
+               
+                </aside>
+                    <div id="map">
+
+                    </div>
+                </div>
+      
+    </main>
     
 </body>
 </html>

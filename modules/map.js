@@ -1,3 +1,5 @@
+
+// inizializzo le variabili vuote, che saranno riempite da initMap
 let map, infoWindow; 
 
 
@@ -14,7 +16,7 @@ function initMap(lat, lng, zoom) {
       zoom, // anzichè zoom: zoom; 
     });
     // crea una infowindow vuota 
-     infoWindow = new google.maps.InfoWindow();
+    infoWindow = new google.maps.InfoWindow();
     return map;  
 }
 
