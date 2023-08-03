@@ -1,2 +1,10 @@
 @import "/css/reset.css";
 
+html, body {
+    margin: 0;
+    height: 100%;
+  }
+  
+  #map {
+    height: 100vh;
+  }
