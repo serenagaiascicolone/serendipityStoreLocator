@@ -1,3 +1,4 @@
+import { bindInfoWindow } from "./map.js";
 let markers = []
 
 function addMarkers(map, stores) {
@@ -8,12 +9,10 @@ function addMarkers(map, stores) {
             position:  store.coords ,
             map, // utilizzo la shorthand anzichè scrivere map:map
           });
+          bindInfoWindow (marker, createMarkerDetails(store))
     });
     // quando clicco sul marker comparirà la info window con tutte le informazioni sul negozio 
-    const infowindow = new google.maps.InfoWindow({
-        content: 'test',
-        ariaLabel: "La mia azienda",
-      });
+   
 }
 
 export {addMarkers}
