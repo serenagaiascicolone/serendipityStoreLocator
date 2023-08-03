@@ -15,4 +15,13 @@ function addMarkers(map, stores) {
    
 }
 
+
+function createMarkerDetails (store) {
+    return `
+    <h3>${store.name}</h3>
+    <p>${store.address}</p>
+    <p>${store.email}</p>
+    <p>${store.phone}</p>
+    <a href="https://www.google.it/maps?saddr=My+Location&daddr=${store.coords.lat},${store.coords.lng}" target="_blank">Directions</a>`
+}
 export {addMarkers}
