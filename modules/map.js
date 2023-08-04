@@ -33,5 +33,8 @@ function bindInfoWindow (marker, content) {
 
 }
 
+function getMap () {
+  return map; 
+}
 
-export {initMap, bindInfoWindow}  
+export {initMap, bindInfoWindow,getMap}  

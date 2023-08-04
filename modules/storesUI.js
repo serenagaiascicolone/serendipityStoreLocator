@@ -1,8 +1,8 @@
 import {qs, ce, qsa} from './dom-manipulation.js'
 import {categoryFiltersContainer, buttons} from '../script.js'
 import { storesContainer } from '../script.js'
-
-
+import {refreshMarkers} from './markers.js'
+import { getMap } from './map.js'
 
 
 // CONTROLLER: LOGICA FILTER
@@ -32,6 +32,8 @@ function setFilter (filter, value) { // chiamata all'interno dell'addEventListen
     updateFilterParam(filter, value)
    let filteredStores = applyFilter (); // la variabile sarà uguale a ciò che ritorna in applyFilter, ovvero l'array con i vari negozi filtrati per categoria;
    updateshowStores(filteredStores, storesContainer) //updateStoresList (aggiorna il dom)
+   let map = getMap() // funzione per importare la mappa dentro la funzione, altrimenti il browser non sa cosa sia 
+   refreshMarkers (map, filteredStores)
 }
 
 // funzione che aggiorna l'oggetto filterParam
@@ -59,6 +61,7 @@ if(filteredStores.searchTerm !== '') { // se il campo è vuoto non voglio applic
         store => 
         store.name.toLowerCase().includes(filterParams.searchTerm) ||
         store.address.toLowerCase().includes(filterParams.searchTerm)
+
     )
 }
 
@@ -115,4 +118,4 @@ showStores(filteredStores, container) // lo riempio con i soli articles dei nego
 }
 
 
-export {showStores, setStores, setFilter, updateshowStores }
+export {showStores, setStores, setFilter }

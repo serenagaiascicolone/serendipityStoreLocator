@@ -20,9 +20,6 @@ async function initApp () {
     addMarkers(map, stores);
     showStores(stores, storesContainer) //updateStoreList 
     setStores(stores);
-   
-    
-
     } catch(err) { //abbellire in css 
         console.log(err);
         qs('#map').innerHTML = `
