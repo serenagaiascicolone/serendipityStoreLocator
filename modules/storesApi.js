@@ -18,8 +18,8 @@ async function initApp () {
         .then(data => data.stores)
     let map =  initMap(myCoords.lat, myCoords.lng, myCoords.zoom)
     addMarkers(map, stores);
-    setStores(stores);
     showStores(stores, storesContainer) //updateStoreList 
+    setStores(stores);
    
     
 

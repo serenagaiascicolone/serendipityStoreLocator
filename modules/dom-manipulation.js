@@ -7,4 +7,8 @@ function ce (element){
   return document.createElement(element)
 }
 
-export {qs, ce}
+function qsa (selectors) {
+  return document.querySelectorAll(selectors)
+}
+
+export {qs, ce, qsa}

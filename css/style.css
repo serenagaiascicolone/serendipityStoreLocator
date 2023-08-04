@@ -4,6 +4,7 @@
 
 :root {
     --primary-color: #f2a445;
+    --primary-color-shade: rgba(242, 164, 69,0.9);
     --secondary-color: #F25C84;
     --secondary-color-shade: rgba(242, 92, 132, 0.8);
     --dark-color: #080C59;
@@ -76,6 +77,10 @@ button:hover, .directionary-button:hover {
     color: black;
 }
 
+.active {
+    background-color: var(--secondary-color-shade);
+}
+
 .search-container {
     width: 100%;
     text-align: center;
@@ -123,3 +128,4 @@ width: 100%;
 height: 100vh;
 
 }
+

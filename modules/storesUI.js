@@ -1,19 +1,27 @@
-import {qs, ce} from './dom-manipulation.js'
+import {qs, ce, qsa} from './dom-manipulation.js'
+import {categoryFiltersContainer, buttons} from '../script.js'
 
+
+
+
+
+// CONTROLLER: FILTER 
 let stores = []
 
-
-// FILTER 
 function setStores (storesList) {
     stores = storesList;
+    
 }
 
+function setFilter (value) {
+    console.log(value)
+}
 
-// MODIFICHE DOM 
+// VIEW: MODIFICHE DOM 
 function showStores (stores, container) { //updateStoreList 
     stores.forEach(store => {
-    let storeContainer = ce('article');
-    // storeContainer.innerHTML = createContentFn;
+        let storeContainer = ce('article');
+        // storeContainer.innerHTML = createContentFn;
     let nameContainer = ce('h3');
     let addressContainer = ce('address');
     let iconEmail = ce ('a');
@@ -47,4 +55,7 @@ function showStores (stores, container) { //updateStoreList
 })
 }
 
-export {showStores, setStores}
+
+
+
+export {showStores, setStores, setFilter }
