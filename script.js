@@ -11,6 +11,8 @@ let storesContainer = qs('#stores-list');
 let buttons = Array.from (qsa('.category-buttons-container button'));
 let categoryFiltersContainer = qs('.category-buttons-container');
 
+
+// logica per filtrare per categorie mediante i buttons
 // non mi piace qui dovrebbe stare in storesUI.js 
 // per cambiare classe ai pulsanti cliccati
 categoryFiltersContainer.addEventListener('click', (e) => {
@@ -22,10 +24,13 @@ categoryFiltersContainer.addEventListener('click', (e) => {
         let otherButtons = buttons.filter(button => button !== pressedButton);
         otherButtons.forEach(button => button.classList.remove('active')); // tornano allo stato originario
         // funzione per filtrare gli stores in base alla categoria
-       setFilter('category', pressedButton.dataset.filter)
+       setFilter('category', pressedButton.dataset.filter) // filter: value => category: smartphone
     }
 })
 
+//logica per filtrare mediante input: search 
+let searchInput = qs('#search-store');
+let clearInputButton = qs('#clear-input');
 
 
 export {storesContainer, categoryFiltersContainer, buttons}

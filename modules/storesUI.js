@@ -1,6 +1,6 @@
 import {qs, ce, qsa} from './dom-manipulation.js'
 import {categoryFiltersContainer, buttons} from '../script.js'
-
+import { storesContainer } from '../script.js'
 
 
 
@@ -30,8 +30,8 @@ function setStores (storesList) {
 function setFilter (filter, value) { // chiamata all'interno dell'addEventListener del contenitore dei buttons (script.js)
     console.log(filter, value)
     updateFilterParam(filter, value)
-   let filteredstores = applyFilter (); // la variabile sarà uguale a ciò che ritorna in applyFilter, ovvero l'array con i vari negozi filtrati per categoria;
-   console.log (filteredstores)
+   let filteredStores = applyFilter (); // la variabile sarà uguale a ciò che ritorna in applyFilter, ovvero l'array con i vari negozi filtrati per categoria;
+   updateshowStores(filteredStores, storesContainer) //updateStoresList (aggiorna il dom)
 }
 
 // funzione che aggiorna l'oggetto filterParam
@@ -98,7 +98,10 @@ function showStores (stores, container) { //updateStoreList
 })
 }
 
-
+function updateshowStores (filteredStores, container){
+container.innerHTML = ''; // svuoto il container quando clicco su una delle categorie 
+showStores(filteredStores, container)
+}
 
 
 export {showStores, setStores, setFilter }
