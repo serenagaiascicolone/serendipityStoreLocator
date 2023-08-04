@@ -54,6 +54,17 @@ if(filterParams.category !== 'all') {
     )
 }
 // filtro per input
+if(filteredStores.searchTerm !== '') { // se il campo è vuoto non voglio applicare nessun filtro 
+    filteredStores = filteredStores.filter (
+        store => 
+        store.name.toLowerCase().includes(filterParams.searchTerm) ||
+        store.address.toLowerCase().includes(filterParams.searchTerm)
+    )
+}
+
+
+
+
 // valore filtrato => filteredStores
 
 return filteredStores
@@ -100,7 +111,7 @@ function showStores (stores, container) { //updateStoreList
 
 function updateshowStores (filteredStores, container){
 container.innerHTML = ''; // svuoto il container quando clicco su una delle categorie 
-showStores(filteredStores, container)
+showStores(filteredStores, container) // lo riempio con i soli articles dei negozi filtrati
 }
 
 

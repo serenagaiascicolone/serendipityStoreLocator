@@ -29,8 +29,15 @@ categoryFiltersContainer.addEventListener('click', (e) => {
 })
 
 //logica per filtrare mediante input: search 
-let searchInput = qs('#search-store');
+let searchStore = qs('#search-store');
 let clearInputButton = qs('#clear-input');
 
+searchStore.addEventListener('keyup', () => processInput())
+
+function processInput () {
+    let userInput = searchStore.value.toLowerCase(); // in modo tale che funzioni anche se l'utente scrive in maiuscolo => rendiamo la ricerca case insensitive
+   setFilter('searchTerm', userInput)
+
+}
 
 export {storesContainer, categoryFiltersContainer, buttons}
