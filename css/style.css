@@ -48,8 +48,8 @@ aside {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    max-width: 400px;
-    align-items: center;
+    width: 400px;
+    /* align-items: center; */
     max-height: 90vh;
    
 }
@@ -61,6 +61,7 @@ aside h2 {
 
 .category-buttons-container {
     display: flex;
+    justify-content: center;
     gap: 1rem;
 }
 
@@ -107,6 +108,8 @@ button:hover, .directionary-button:hover {
     gap: 0.5rem;
     background-color: var(--secondary-color);
     padding: 1rem;
+    /* align-self: flex-start; */
+    width: 90%;
 }
 
 #stores-list article p {

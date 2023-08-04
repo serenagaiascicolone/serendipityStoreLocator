@@ -115,4 +115,4 @@ showStores(filteredStores, container) // lo riempio con i soli articles dei nego
 }
 
 
-export {showStores, setStores, setFilter }
+export {showStores, setStores, setFilter, updateshowStores }

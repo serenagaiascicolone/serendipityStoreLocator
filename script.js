@@ -32,7 +32,11 @@ categoryFiltersContainer.addEventListener('click', (e) => {
 let searchStore = qs('#search-store');
 let clearInputButton = qs('#clear-input');
 
+
+// per applicare il filtro
 searchStore.addEventListener('keyup', () => processInput())
+// per svuotare l'input 
+clearInputButton.addEventListener('click', () => clearInput())
 
 function processInput () {
     let userInput = searchStore.value.toLowerCase(); // in modo tale che funzioni anche se l'utente scrive in maiuscolo => rendiamo la ricerca case insensitive
@@ -40,4 +44,8 @@ function processInput () {
 
 }
 
+function clearInput () {
+    searchStore.value = '';
+    processInput() // per avere di nuovo tutta la lista di negozi, passando la funzione in cui la stringa è vuota 
+}
 export {storesContainer, categoryFiltersContainer, buttons}
