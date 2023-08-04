@@ -21,8 +21,8 @@ categoryFiltersContainer.addEventListener('click', (e) => {
         // filter restituirà un array con i pulsanti che non sono pressedButton, ovvero quelli che non sono stati cliccati
         let otherButtons = buttons.filter(button => button !== pressedButton);
         otherButtons.forEach(button => button.classList.remove('active')); // tornano allo stato originario
-
-       setFilter(pressedButton.dataset.filter)
+        // funzione per filtrare gli stores in base alla categoria
+       setFilter('category', pressedButton.dataset.filter)
     }
 })
 
