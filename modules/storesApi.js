@@ -29,4 +29,4 @@ async function initApp () {
 }
 
 
-export {initApp}
+export {initApp, myCoords}

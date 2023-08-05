@@ -1,9 +1,9 @@
 import {qs, ce, qsa} from './dom-manipulation.js'
 import {categoryFiltersContainer, buttons} from '../script.js'
 import { storesContainer } from '../script.js'
-import {refreshMarkers} from './markers.js'
-import { getMap } from './map.js'
-
+import {refreshMarkers, addMarkers} from './markers.js'
+import { initMap, getMap, setMap } from './map.js'
+import {myCoords} from './storesApi.js'
 
 // CONTROLLER: LOGICA FILTER
 
@@ -33,7 +33,7 @@ function setFilter (filter, value) { // chiamata all'interno dell'addEventListen
    let filteredStores = applyFilter (); // la variabile sarà uguale a ciò che ritorna in applyFilter, ovvero l'array con i vari negozi filtrati per categoria;
    updateshowStores(filteredStores, storesContainer) //updateStoresList (aggiorna il dom)
    let map = getMap() // funzione per importare la mappa dentro la funzione, altrimenti il browser non sa cosa sia 
-   refreshMarkers (map, filteredStores)
+   refreshMarkers (map, filteredStores) // chiamo la funzione e passo la mappa e i negozi filtrati (stores)
 }
 
 // funzione che aggiorna l'oggetto filterParam
@@ -77,8 +77,8 @@ return filteredStores
 // VIEW: MODIFICHE DOM 
 function showStores (stores, container) { //updateStoreList 
     stores.forEach(store => {
-        let storeContainer = ce('article');
-        // storeContainer.innerHTML = createContentFn;
+    let storeContainer = ce('article');
+    // storeContainer.innerHTML = createContentFn;
     let nameContainer = ce('h3');
     let addressContainer = ce('address');
     let iconEmail = ce ('a');
@@ -106,9 +106,10 @@ function showStores (stores, container) { //updateStoreList
     directionaryButton.setAttribute('href',`https://www.google.it/maps?saddr=My+Location&daddr=${store.coords.lat},${store.coords.lng}`)
     directionaryButton.target = '_blank'; 
     
-    storeContainer.addEventListener('click', () => {
-        console.log('zoom sulla mappa')
-    })
+
+    storeContainer.addEventListener('click', () => 
+    setMap(store.coords.lat, store.coords.lng, 15)
+   )
 })
 }
 
@@ -118,4 +119,4 @@ showStores(filteredStores, container) // lo riempio con i soli articles dei nego
 }
 
 
-export {showStores, setStores, setFilter }
+export {showStores, setStores, setFilter}

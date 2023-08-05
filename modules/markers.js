@@ -24,6 +24,7 @@ function addMarkers(map, stores) {
       });    
 }
 
+
 // quando clicco sul marker comparirà la info window con tutte le informazioni sul negozio 
 function createMarkerDetails (store) {
     return  `
@@ -55,7 +56,7 @@ function refreshMarkers (map, stores) {
             store.coords.lng === markerPosition.lng
             )
 
-        //mostrare sulla mappa i marker attivo (filtrato)
+        //mostrare sulla mappa i cluster dei marker attivo (filtrato)
         if (activeMarker) {
             marker.setMap(map); 
             return true; 
