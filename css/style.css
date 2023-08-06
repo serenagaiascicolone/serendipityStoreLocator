@@ -26,12 +26,13 @@ header {
 header h1 {
     padding: 2rem;
     text-transform: uppercase;
+    text-align: center;
 }
 
 /* da modificare per versione smartphone */
 main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     position: relative;
 
 }
@@ -40,23 +41,31 @@ aside {
     background-color: white;
     padding: 1rem;
     box-sizing: border-box;
-    position: absolute;
-    left: 0;
-    top: 0;
-    margin: 2rem;
-    z-index: 10;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    width: 400px;
+    width: 100%;
     /* align-items: center; */
-    max-height: 90vh;
+    max-height: 60vh;
    
+}
+
+aside header {
+    display: flex;
+    justify-content: space-between;
 }
 
 aside h2 {
     text-transform: uppercase;
     align-self: flex-start;
+}
+
+.refresh-button {
+    line-height: 30px;
+}
+
+.refresh-button:hover{
+    cursor: pointer;
 }
 
 .category-buttons-container {

@@ -10,6 +10,7 @@ let apiUrl = '/stores.json'
 //     lng: 12.932628,
 //     zoom: 6
 // }
+
 let myCoords = {
     lat: 43.6037148,
     lng: 3.776218,

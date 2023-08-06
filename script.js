@@ -6,7 +6,7 @@ import { setFilter } from './modules/storesUI.js';
 // config.js:
 initApp()
 let storesContainer = qs('#stores-list');
-
+let refreshButton = qs('.refresh-button ')
 // tutti i bottoni di categoria e li trasformo in array 
 let buttons = Array.from (qsa('.category-buttons-container button'));
 let categoryFiltersContainer = qs('.category-buttons-container');
@@ -48,4 +48,10 @@ function clearInput () {
     searchStore.value = '';
     processInput() // per avere di nuovo tutta la lista di negozi, passando la funzione in cui la stringa è vuota 
 }
+
+
+refreshButton.addEventListener('click', () => {
+    initApp()
+    clearInput()
+})
 export {storesContainer, categoryFiltersContainer, buttons}

@@ -12,6 +12,7 @@
     <script src="script.js" type="module"></script>
     <script src="https://kit.fontawesome.com/316cb9933a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/media-queries.css">
 </head>
 <body>
     <header>
@@ -23,16 +24,19 @@
 
         <!-- Contenitore della mappa -->
         <aside id="drawer">
-            <h2>Electronic Stores</h2>
+            <header>
+                <h2>Electronic Stores</h2>
+                <span class="refresh-button"><i class="fa-solid fa-rotate-left" style="color: #f2a445;"></i></span>
+            </header>
             <div class="category-buttons-container">
                 <!-- pulsanti -->
                         <button data-filter="all">Tutti</button>
                         <button data-filter="computer">Computer</button>
                         <button data-filter="tv">Tv</button>
                         <button data-filter="smartphone">Smartphone</button>
-            </div>
-                        <div class="search-container">
-                            <!-- input -->
+                    </div>
+                    <div class="search-container">
+                        <!-- input -->
                             <input type="text" name="" id="search-store" placeholder="filtra per nome o per indirizzo">
                             <button id="clear-input">X</button>
                         </div>
