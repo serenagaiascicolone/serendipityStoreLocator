@@ -5,11 +5,17 @@ import {storesContainer} from '../script.js'
 import { setStores, showStores } from './storesUI.js'
 let apiUrl = '/stores.json'
 
+// let myCoords = {
+//     lat: 42.646184,
+//     lng: 12.932628,
+//     zoom: 6
+// }
 let myCoords = {
-    lat: 42.646184,
-    lng: 12.932628,
-    zoom: 6
+    lat: 43.6037148,
+    lng: 3.776218,
+    zoom: 5
 }
+
 
 async function initApp () {
     try {

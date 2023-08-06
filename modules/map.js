@@ -26,6 +26,7 @@ function initMap(lat, lng, zoom) {
     google.maps.event.addListener(marker, "click", () => {
       infoWindow.setContent(content)
       infoWindow.open(map, marker);
+    
     });
     
   }
